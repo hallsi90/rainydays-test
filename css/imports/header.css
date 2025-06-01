@@ -88,6 +88,7 @@ nav a:hover {
   cursor: pointer;
   color: var(--main-blue-color);
   transition: color 0.3s ease-in-out;
+  order: 2; /* Ensure it is placed after the cart icon */
 }
 
 #menuToggle:hover {
@@ -103,6 +104,7 @@ nav a:hover {
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  order: 1; /* Ensure it is placed before the hamburger menu icon */
 }
 
 #cart-icon:hover {
