@@ -248,7 +248,7 @@ img {
    MEDIA QUERIES
    =============================== */
 
-/* TABLET 768px - 1024px */
+/* TABLET (768px - 1024px) */
 @media (min-width: 768px) {
   /* Global */
   body {
@@ -342,6 +342,11 @@ img {
 
   p,
   ul {
+    font-size: 1.8rem;
+  }
+
+  button,
+  .cta-button {
     font-size: 1.8rem;
   }
 }
