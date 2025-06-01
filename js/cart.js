@@ -1,5 +1,9 @@
 /* This file is for the pages where you can add and/or remove a product to/from the cart */
 
+/* -------------------------------
+   SHOPPING CART
+-------------------------------- */
+
 // Function to add product to cart
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -11,7 +15,7 @@ function addToCart(product) {
     // Increment quantity if item is already in cart
     existingProduct.quantity += 1;
   } else {
-    // Add product with quantity if new
+    // If the product is not already in the cart, add it with a quantity of 1
     product.quantity = 1;
     cart.push(product);
   }
@@ -29,7 +33,7 @@ function updateCartQuantity(index, delta) {
   if (item) {
     item.quantity += delta;
 
-    // Remove item if quantity is zero or less
+    // If quantity is zero or less after the update, remove the item from the cart entirely
     if (item.quantity <= 0) {
       cart.splice(index, 1);
     }

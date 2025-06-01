@@ -1,7 +1,11 @@
-/* JavaScript for the only women's jackets page */
+/* 
+  JavaScript for the Women's Jackets Page 
+  → Fetches and displays only products with gender "female"
+*/
 
 const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 
+// Fetch only women's jackets
 async function fetchWomensJackets() {
   showSpinner(); // Show spinner before fetching
 

@@ -1,4 +1,4 @@
-/* JavaScript for the Checkout Page showing items in cart */
+/* JavaScript for the Checkout Page: displays cart items, allows quantity changes, and handles checkout */
 
 // Function to display cart items
 function displayCartItems() {
@@ -14,6 +14,7 @@ function displayCartItems() {
   cartItemsContainer.innerHTML = ""; // Clear container first
   let totalPrice = 0;
 
+  // Loop through each cart item, calculate totals, format prices, and create DOM elements for display
   cart.forEach((item, index) => {
     const itemPrice = item.onSale
       ? parseFloat(item.discountedPrice)
@@ -58,7 +59,7 @@ function displayCartItems() {
     totalPrice
   )}`;
 
-  // Add event listeners for quantity buttons
+  // Add individual click events to each + / - button to update quantity and re-render cart
   document.querySelectorAll(".quantity-button").forEach((button) => {
     button.addEventListener("click", (event) => {
       const index = parseInt(event.target.getAttribute("data-index"));
@@ -68,6 +69,12 @@ function displayCartItems() {
     });
   });
 }
+
+// Handle the checkout process:
+// - Show a processing message
+// - Simulate a delay
+// - Clear the cart
+// - Redirect to the confirmation page
 
 // Function to handle checkout process
 function handleCheckout() {

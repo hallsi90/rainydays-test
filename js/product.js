@@ -1,11 +1,15 @@
-/* JavaScript for the product page showing a spesific product with details */
+/* JavaScript for the Product Page:
+   - Displays a single product’s details
+   - Handles pricing display (including discounts)
+   - Adds product to the cart when button is clicked
+*/
 
-// Retrieve the product data from local storage
+// 1. Get product data from localStorage (saved earlier when navigating from another page)
 const productData = JSON.parse(localStorage.getItem("selectedProduct"));
 
-// Check if productData exists
+// 2. If data exists, populate the page with product details
 if (productData) {
-  // Set the product information in the respective elements
+  // Set product title, image, and description
   document.getElementById("product-title").innerText = productData.title;
   document.getElementById("product-image").src = productData.image.url;
   document.getElementById("product-image").alt =
@@ -32,7 +36,7 @@ if (productData) {
     ).innerHTML = `<p class="price">${formattedPrice}</p>`;
   }
 
-  // Display sizes if available
+  // Show available sizes (if provided)
   if (productData.sizes && productData.sizes.length > 0) {
     document.getElementById(
       "product-sizes"
@@ -41,7 +45,7 @@ if (productData) {
     document.getElementById("product-sizes").innerText = "Sizes: Not available";
   }
 
-  // Display the base color
+  // Show base color (or fallback text)
   document.getElementById("product-base-color").innerText = `Color: ${
     productData.baseColor || "Not specified"
   }`;
@@ -51,7 +55,7 @@ if (productData) {
   window.location.href = "index.html";
 }
 
-// Event listener for Add to Cart button
+// 3. Add product to cart when "Add to Cart" button is clicked
 const addToCartButton = document.getElementById("add-to-cart-button");
 if (addToCartButton) {
   addToCartButton.addEventListener("click", () => {

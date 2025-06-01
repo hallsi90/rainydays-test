@@ -1,4 +1,7 @@
-/* JavaScript for all products with gender filtering all, male and female --> used on the index and jackets page */
+/* 
+  JavaScript for displaying all products with gender filtering 
+  → Used on the index and jackets pages
+*/
 
 const apiUrl = "https://v2.api.noroff.dev/rainy-days";
 

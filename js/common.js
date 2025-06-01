@@ -90,7 +90,7 @@ function displayMessage(message, type = "error") {
 }
 
 /* -------------------------------
-   FORMAT PRODUCT PRICE
+   FORMAT PRODUCT PRICE — USD formatting
 -------------------------------- */
 
 // Function to format price to USD
