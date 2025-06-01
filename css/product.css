@@ -45,7 +45,8 @@
   align-items: center;
 }
 
-#product-price p {
+/* Regular price */
+.price {
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -54,15 +55,19 @@
 .discounted-price {
   color: var(--discounted-price-color);
   background-color: var(--main-white-color);
+  font-size: 1.8rem;
+  font-weight: bold;
   padding: 10px;
   border-radius: 50px;
   margin: 0;
 }
 
-/* Regular non-sale price */
+/* Regular price when on sale */
 .original-price {
   color: lightgray;
   text-decoration: line-through;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -95,7 +100,7 @@ hr {
   }
 }
 
-/* TABLET (1024px and up) */
+/* DESKTOP (1024px and up) */
 @media screen and (min-width: 1024px) {
   #product-price p {
     font-size: 2rem;

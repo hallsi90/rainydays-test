@@ -1,5 +1,8 @@
-/* STYLES FOR JACKET LISTS ON INDEX, JACKETS, MEN'S AND WOMEN'S PAGES */
+/* -------------------------------
+   STYLES FOR JACKET LISTS ON INDEX, JACKETS, MEN'S AND WOMEN'S PAGES
+-------------------------------- */
 
+/* Gender filtering */
 #filter-container {
   text-align: center;
   margin-bottom: 20px;
@@ -25,6 +28,7 @@
   border: 0;
 }
 
+/* List of products wrapper */
 #product-list {
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +36,7 @@
   gap: 20px;
 }
 
+/* Product card */
 .product {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -46,6 +51,14 @@
   box-sizing: border-box; /* Ensure padding and border are included in the width/height */
 }
 
+/* Product card hover effect */
+.product:hover {
+  transform: scale(1.02); /* Slightly enlarge the product card on hover */
+  transition: transform 0.2s; /* Smooth transition effect */
+  cursor: pointer;
+}
+
+/* Product image */
 .image-container {
   width: 100%; /* Fill the container width */
   height: 200px; /* Fixed height for the image container */
@@ -63,28 +76,22 @@
   max-height: 100%; /* Prevent the image from exceeding the container height */
 }
 
-.product:hover {
-  transform: scale(1.02); /* Slightly enlarge the product card on hover */
-  transition: transform 0.2s; /* Smooth transition effect */
-  cursor: pointer;
-}
-
-/* ON SALE PRICES AND BADGES FOR LISTS OF PRODUCTS */
-
+/* Product prices */
 .price-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2px;
   align-items: center;
+  gap: 2px;
 }
 
-/* Regular non-sale price */
-.product p {
+/* Regular price */
+.price {
   color: var(--main-blue-color);
-  font-size: 1.8rem;
   font-weight: bold;
+  font-size: 1.8rem;
 }
 
+/* On sale price */
 .discounted-price {
   color: var(--discounted-price-color);
   font-weight: bold;
@@ -92,50 +99,68 @@
   margin-bottom: 0;
 }
 
+/* Regular price when on sale */
 .original-price {
   color: grey;
   text-decoration: line-through;
   font-size: 1.4rem;
+  font-weight: bold;
   margin-top: 0;
   margin-bottom: 3px;
 }
 
+/* On sale badge */
 .on-sale-badge {
   background-color: var(--on-sale-badge-color);
   color: var(--main-white-color);
   font-size: 1.4rem;
   font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
-/* MEDIA QUERIES */
+/* -------------------------------
+   MEDIA QUERIES
+-------------------------------- */
 
+/* TABLET (768px - 1024px) */
 @media screen and (min-width: 768px) {
-  .price-wrapper {
-    gap: 5px;
+  /* H1 spacing on women's and men's page */
+  .women h1,
+  .men h1 {
+    margin: 25px 0;
   }
 
-  .product p,
-  .discounted-price {
-    font-size: 2rem;
+  .product {
+    width: 300px;
+    height: 400px;
+  }
+
+  #product-list {
+    gap: 30px;
+  }
+
+  .price-wrapper {
+    gap: 5px;
   }
 
   .original-price,
   .on-sale-badge {
     font-size: 1.6rem;
   }
-
-  .product {
-    width: 250px;
-    height: 400px;
-  }
 }
 
+/* DESKTOP (1024px and up) */
 @media screen and (min-width: 1024px) {
-  .product p,
+  /* H1 spacing on women's and men's page */
+  .women h1,
+  .men h1 {
+    margin: 35px 0;
+  }
+
+  .price,
   .discounted-price {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .original-price,
@@ -144,7 +169,6 @@
   }
 
   .product {
-    width: 300px;
     height: 450px;
   }
 }
