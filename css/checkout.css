@@ -1,16 +1,5 @@
 /* STYLES FOR THE CHECKOUT PAGE */
 
-h1 {
-  font-size: 2.6rem;
-  text-align: center;
-}
-
-/* On the checkout page this p style is for the "your cart is empty message" */
-p {
-  font-size: 2rem;
-  text-align: center;
-}
-
 /* CART STYLING */
 
 #cart-items {
@@ -169,10 +158,6 @@ p {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 500px) {
-  h1 {
-    font-size: 4.8rem;
-  }
-
   .cart-item {
     padding: 10px;
   }
@@ -228,10 +213,6 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-  p {
-    font-size: 2.5rem;
-  }
-
   .cart-item {
     padding: 15px;
   }
