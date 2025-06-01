@@ -1,0 +1,263 @@
+/* STYLING FOR THE INTRODUCTION SECTION OF THE HOME PAGE */
+
+.introduction-content-container {
+  color: var(--main-white-color);
+  background-color: var(--main-white-color);
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-image {
+  height: 100%; /* Adjust the height of the top image */
+  background-image: url("../images/home/start/two_people_hiking_on_mountain_during_daytime.jpg");
+  margin-bottom: 2px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* Ensures child elements don't overflow */
+}
+
+.background h1 {
+  font-size: 2rem;
+  position: absolute;
+  white-space: nowrap; /* Prevent text from wrapping */
+  top: 10%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the h1 within the .background div */
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+
+.explore-button-container {
+  display: block;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+
+.explore-button-container button {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--main-blue-color);
+  cursor: pointer;
+  background: var(--main-white-color);
+  color: var(--main-blue-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.explore-button-container button:hover {
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+
+.explore-button-container form {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.overlay h2 {
+  font-size: 1.5rem;
+  position: absolute;
+  white-space: nowrap;
+  top: 93%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the h1 within the .background div */
+  z-index: 2; /* Ensure the h1 is above the overlay */
+}
+
+.bottom-background-images {
+  height: 20vh;
+  display: flex;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.bottom-image-1 {
+  flex: 2;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/man_ice_skiing_on_hill_cropped_and_resized.jpg");
+  background-position: right;
+  background-size: cover;
+}
+
+.bottom-image-2 {
+  flex: 2;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/man_with_snowboard_standing_on_top_of_mountain_cropped_and_resized.jpg");
+  background-position: left;
+  background-size: cover;
+}
+
+.bottom-image-3 {
+  flex: 1;
+  height: 100%; /* Adjust the height of the horizontal images */
+  background-image: url("../images/home/start/two_people_canoeing_resized.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value for transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure the overlay is below the h1 */
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 375px) {
+  .background h1 {
+    font-size: 2.5rem;
+  }
+
+  .overlay h2 {
+    font-size: 1.8rem;
+    top: 92%;
+  }
+
+  .explore button {
+    font-size: 1.2rem;
+  }
+
+  .introduction-content-container {
+    height: 70vh;
+  }
+
+  .bottom-background-images {
+    height: 30vh;
+  }
+}
+
+@media screen and (min-width: 485px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .introduction-content h2 {
+    font-size: 2.5rem;
+    padding-top: 50px;
+  }
+
+  .explore button {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .background h1 {
+    font-size: 3rem;
+  }
+
+  .overlay h2 {
+    font-size: 2.3rem;
+    top: 92%;
+  }
+
+  .introduction-content-container {
+    height: 70vh;
+  }
+
+  .bottom-background-images {
+    height: 35vh;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .background h1 {
+    font-size: 4rem;
+  }
+
+  .overlay h2 {
+    font-size: 3rem;
+    top: 91%;
+  }
+
+  .explore button {
+    font-size: 1.8rem;
+  }
+
+  .introduction-content-container {
+    height: 80vh;
+  }
+
+  .bottom-background-images {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  .introduction-content h2 {
+    font-size: 4rem;
+    padding-top: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .background h1 {
+    font-size: 4.8rem;
+  }
+
+  .overlay h2 {
+    font-size: 4rem;
+    top: 91%;
+  }
+
+  .explore button {
+    font-size: 2.5rem;
+  }
+
+  .introduction-content-container {
+    height: 90vh;
+  }
+
+  .bottom-background-images {
+    height: 50vh;
+  }
+
+  .top-image {
+    margin-bottom: 10px;
+  }
+
+  .bottom-background-images {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .introduction-content-container {
+    height: 100vh;
+  }
+
+  .bottom-background-images {
+    height: 60vh;
+  }
+}

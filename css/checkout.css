@@ -1,0 +1,306 @@
+/* STYLES FOR THE CHECKOUT PAGE */
+
+h1 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+/* On the checkout page this p style is for the "your cart is empty message" */
+p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* CART STYLING */
+
+#cart-items {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures all child elements align properly */
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--design-details-color);
+  background-color: var(--main-white-color);
+  border-radius: 8px;
+}
+
+/* LEFT SECTION FOR IMAGE AND TITLE */
+
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.cart-item-title {
+  color: var(--main-blue-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden; /* Ensures overflow doesn't break the layout */
+  white-space: normal; /* Allows wrapping */
+  text-overflow: ellipsis; /* In case some titles are still too long after wrapping */
+}
+
+/* MIDDLE SECTION FOR QUANTITY NUMBER AND BUTTONS */
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 80px; /* Fixed width for consistent alignment */
+  justify-content: center;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.quantity-button {
+  width: 20px;
+  height: 20px;
+  font-size: 1.2rem;
+  color: var(--main-white-color);
+  background-color: var(--design-details-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quantity-button:hover {
+  background-color: var(--main-blue-color);
+  transition: ease-in-out 200ms;
+}
+
+.quantity-number {
+  color: var(--main-blue-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* RIGHT SECTION FOR PRICE AND ON SALE BADGE */
+
+.cart-item-price-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px; /* Reduced spacing for tighter grouping */
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Item price styling for non-sale products */
+.cart-item-price {
+  color: var(--main-blue-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap; /* Prevents USD from wrapping to a new line */
+}
+
+/* Item styling for on sale pale products - price and on sale badge */
+
+.discounted-price {
+  color: var(--discounted-price-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.original-price {
+  color: grey;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.on-sale-badge {
+  background-color: var(--on-sale-badge-color);
+  color: var(--main-white-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+/* BOTTOM SECTION OF PAGE STYLING */
+
+/* Total price styling */
+.total-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  border-top: 2px solid var(--design-details-color);
+}
+
+/* PROCESSING MESSAGE AND SPINNER (spinner styles in styles.css) */
+
+.processing-message {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 54, 65, 0.9); /* Semi-transparent background */
+  color: var(--main-white-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1000; /* Ensures it appears on top */
+  flex-direction: column; /* Stack spinner and text vertically */
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  .cart-item {
+    padding: 10px;
+  }
+
+  .cart-item-image {
+    width: 60px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 90px;
+  }
+
+  .cart-item-title,
+  .quantity-number,
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
+    font-size: 1.8rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.5rem;
+  }
+
+  .quantity-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cart-item-quantity {
+    gap: 4px;
+  }
+
+  .total-price {
+    font-size: 2.5rem;
+    border-top: 3px solid var(--design-details-color);
+  }
+
+  .processing-message {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .cart-item-image {
+    width: 70px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 110px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  p {
+    font-size: 2.5rem;
+  }
+
+  .cart-item {
+    padding: 15px;
+  }
+
+  .cart-item-image {
+    width: 80px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 120px;
+  }
+
+  .cart-item-title,
+  .quantity-number,
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
+    font-size: 2rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 1.8rem;
+  }
+
+  .total-price {
+    font-size: 3rem;
+    border-top: 4px solid var(--design-details-color);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cart-item {
+    padding: 20px;
+  }
+
+  .cart-item-image {
+    width: 90px;
+  }
+
+  .cart-item-price-wrapper {
+    width: 130px;
+  }
+
+  .cart-item-title,
+  .quantity-number,
+  .quantity-button,
+  .cart-item-price,
+  .discounted-price {
+    font-size: 2.5rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 2.3rem;
+  }
+
+  .quantity-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .total-price {
+    font-size: 4rem;
+    border-top: 6px solid var(--design-details-color);
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .processing-message {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,227 @@
+/* ===============================
+   HEADER STYLES - MOBILE FIRST
+   =============================== */
+
+/* Main header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  position: relative;
+  z-index: 10;
+}
+
+/* Flex wrapper for logo, hamburger, and cart */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo image */
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* ===============================
+   NAVIGATION (DESKTOP AND MOBILE)
+   =============================== */
+
+/* Nav: hidden by default on mobile */
+nav {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+  position: absolute;
+  top: 63px;
+  right: 0;
+  background-color: var(--design-details-color-light);
+  z-index: 1000;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Nav: visible when menu is active */
+nav.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: block;
+  padding: 10px 20px;
+}
+
+nav a {
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: var(--main-blue-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: var(--main-white-color);
+}
+
+/* Mobile: Hamburger menu toggle button */
+#menuToggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--main-blue-color);
+  transition: color 0.3s ease-in-out;
+}
+
+#menuToggle:hover {
+  color: var(--design-details-color);
+}
+
+/* Shopping cart icon */
+#cart-icon {
+  color: var(--main-blue-color);
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+#cart-icon:hover {
+  color: var(--design-details-color);
+}
+
+/* Shopping cart count badge  */
+#cart-count {
+  position: absolute;
+  top: -10px; /* Adjust to bring it down slightly */
+  right: -4px; /* Adjust to bring it closer to the icon */
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  font-size: 1rem;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+#cart-count:hover {
+  background-color: var(--design-details-color);
+}
+
+/* Container for hamburger and cart icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===============================
+   OVERLAY WHEN MENU IS OPEN
+   Creates a dimmed background
+   =============================== */
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* dimmed transparent */
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===============================
+   MEDIA QUERIES
+   =============================== */
+
+/* TABLET 768px - 1024px */
+@media screen and (min-width: 768px) {
+  /* Hide hamburger menu on screens from 768px */
+  #menuToggle {
+    display: none;
+  }
+
+  header {
+    padding: 20px 25px;
+  }
+
+  /* Show full nav when hamburger menu is hidden on screens from 768px */
+  nav {
+    display: flex;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background-color: transparent;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 25px;
+  }
+
+  nav li {
+    padding: 10px;
+  }
+
+  nav a:hover {
+    color: var(--design-details-color);
+  }
+}
+
+/* DESKTOP (1024px and up) */
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 20px 30px;
+  }
+
+  nav ul {
+    gap: 50px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  #cart-icon {
+    font-size: 2.5rem;
+  }
+
+  #cart-count {
+    font-size: 1.5rem;
+  }
+}

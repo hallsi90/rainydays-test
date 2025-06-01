@@ -1,0 +1,151 @@
+/* STYLES FOR THE PRODUCT PAGE */
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow if necessary */
+  flex-grow: 1;
+  margin: auto;
+}
+
+#product-image {
+  width: auto; /* Ensure it fits within the container */
+  height: auto;
+  max-width: 100%; /* Prevent the image from exceeding the container width */
+  max-height: 500px; /* Set a maximum height if needed */
+  border: 1px solid var(--main-white-color);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--main-white-color);
+}
+
+.product-details {
+  text-align: center;
+  margin: 20px;
+}
+
+#product-description {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+#product-sizes,
+#product-base-color {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* REGULAR PRICES, ON SALE PRICES AND BADGES FOR SINGLE PRODUCT */
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Regular non-sale price*/
+#product-price {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.discounted-price {
+  color: var(--discounted-price-color);
+  background-color: var(--main-white-color);
+  padding: 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.original-price {
+  color: lightgray;
+  text-decoration: line-through;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.on-sale-badge {
+  background-color: var(--on-sale-badge-color);
+  color: var(--main-white-color);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 1px solid var(--design-details-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1200px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 450px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  #product-description,
+  #product-sizes,
+  #product-base-color {
+    font-size: 1.8rem;
+  }
+
+  #product-price,
+  .discounted-price {
+    font-size: 3rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 2.5rem;
+  }
+
+  hr {
+    border: 2px solid var(--design-details-color);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #product-description,
+  #product-sizes,
+  #product-base-color {
+    font-size: 2rem;
+  }
+
+  #product-price,
+  .discounted-price {
+    font-size: 4rem;
+  }
+
+  .original-price,
+  .on-sale-badge {
+    font-size: 3rem;
+  }
+
+  .price-wrapper {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+}

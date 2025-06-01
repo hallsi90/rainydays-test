@@ -1,0 +1,357 @@
+/* ===============================
+   GLOBAL STYLES FILE — MOBILE FIRST
+   =============================== */
+/*
+  style.css – Base layout, typography, buttons, spinner
+  Mobile-first approach
+  Shared across all pages
+*/
+
+/* ===============================
+   IMPORTS AND VARIABLES
+   =============================== */
+
+@import "imports/variables.css";
+@import "imports/header.css";
+@import "imports/footer.css";
+
+/* ===============================
+   RESET & BASE STYLES
+   =============================== */
+
+/* Set base font size to 62.5% (10px) so 1rem = 10px */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex; /* Layout utility: ensures footer stays at bottom of viewport on short pages */
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--main-blue-color);
+  color: var(--main-white-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+main {
+  margin: 10px 30px;
+  flex-grow: 1; /* Allow main content to grow and push footer down */
+}
+
+/* -------------------------------
+   TYPOGRAPHY STYLES
+-------------------------------- */
+
+/* Letter spacing */
+h1,
+h2,
+h3,
+button,
+.cta-button,
+nav li a {
+  letter-spacing: 0.5px;
+}
+
+/* Font sizes */
+h1 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--main-blue-color);
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+p,
+ul {
+  font-size: 1.4rem;
+}
+
+small {
+  font-size: 1.2rem;
+}
+
+button,
+.cta-button {
+  font-size: 1.4rem;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* ===============================
+   BUTTON STYLES
+   =============================== */
+/* CTA BUTTONS (add to cart and checkout) */
+
+.cta-button {
+  color: var(--main-blue-color);
+  background-color: var(--main-white-color);
+  padding: 10px 60px;
+
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
+.cta-button:hover {
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
+  border: 2px solid var(--main-white-color);
+  transition: ease-in-out 200ms;
+}
+
+/* ===============================
+   ERROR AND SUCCESS MESSAGES
+   =============================== */
+
+#error-message {
+  position: fixed;
+  top: 30%; /* Adjust as needed to control placement */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  max-width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  z-index: 1000; /* Ensure it appears on top */
+  display: none; /* Hide initially */
+}
+
+#error-message.success {
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border: 2px solid var(--design-details-color);
+}
+
+#error-message.error {
+  background-color: var(--error-message-main-color);
+  color: var(--error-message-text-color);
+  border: 2px solid var(--error-message-text-color-color);
+}
+
+/* ===============================
+   SCROLL TO TOP BUTTON
+   =============================== */
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 16px;
+  font-size: 1.6rem;
+  background-color: var(--main-white-color);
+  color: var(--main-blue-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* Hide by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: var(--design-details-color-light);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   SPINNER STYLES
+   =============================== */
+
+/* Spinner from https://cssloaders.github.io/ with small alterations*/
+.spinner {
+  color: var(--design-details-color-light); /* Spinner color */
+  font-size: 1rem; /* Larger size for visibility */
+  width: 1em; /* Larger width */
+  height: 1em; /* Larger height */
+  border-radius: 50%; /* Circular spinner */
+  position: relative; /* Relative to its container */
+  animation: mulShdSpin 1.3s infinite linear; /* Spinning animation */
+  transform: translateZ(0); /* Enhance performance */
+  display: block; /* Ensure it’s visible */
+  margin: 50px auto; /* Center it horizontally with some spacing */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Spinner animation */
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+/* ===============================
+   MEDIA QUERIES
+   =============================== */
+
+@media screen and (min-width: 500px) {
+  .spinner {
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+}
+
+/* TABLET 768px - 1024px */
+@media (min-width: 768px) {
+  /* Global */
+  body {
+    font-size: 1.6rem;
+  }
+
+  main {
+    margin: 10px 40px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  p,
+  ul {
+    font-size: 1.6rem;
+  }
+
+  small {
+    font-size: 1.4rem;
+  }
+
+  #scrollToTopBtn {
+    font-size: 2rem;
+  }
+
+  /* Buttons */
+  button,
+  .cta-button {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #error-message {
+    font-size: 2rem;
+  }
+
+  #error-message.success {
+    border: 4px solid var(--design-details-color);
+  }
+
+  #error-message.error {
+    border: 4px solid var(--error-message-text-color);
+  }
+}
+
+/* DESKTOP (1024px and up) */
+@media screen and (min-width: 1024px) {
+  /* Global */
+  body {
+    font-size: 1.8rem;
+  }
+
+  main {
+    margin: 10px 50px;
+  }
+
+  .spinner {
+    font-size: 2rem;
+    margin-top: 70px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p,
+  ul {
+    font-size: 1.8rem;
+  }
+}
